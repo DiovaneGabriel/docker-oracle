@@ -9,7 +9,6 @@ services:
       ORACLE_PASSWORD: oracle
     container_name: oracle
     volumes:
-      # - ./.docker/oracle/data/:/u01/app/oracle/oradata/
       - data-oracle:/u01/app/oracle/oradata/
     ports:
       - "1521:1521"
@@ -22,27 +21,3 @@ networks:
 
 volumes:
   data-oracle:
-
-# volumes:
-#   data-oracle:
-
-# version: '3.7'
-
-# services:
-#   oracle-xe:
-#     build:
-#       context: .docker/oracle/
-#     ports:
-#       - "1521:1521"
-#     # volumes:
-#     #   - data-oracle:/u01/app/oracle/oradata
-#       # - ./.docker/oracle/oradata/:/u01/app/oracle/oradata/
-#     networks:
-#       - custom_network
-
-# networks:
-#   custom_network:
-#     external: true
-
-# # volumes:
-# #   data-oracle:
